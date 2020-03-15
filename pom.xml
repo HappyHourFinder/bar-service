@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.2.4.RELEASE</version>
+    <version>2.2.5.RELEASE</version>
     <relativePath/>
   </parent>
   <groupId>com.mathieuaime.hhf</groupId>
@@ -17,6 +17,8 @@
 
   <properties>
     <java.version>13</java.version>
+    <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+    <spring-retry.version>1.2.5.RELEASE</spring-retry.version>
     <modelmapper.version>2.3.6</modelmapper.version>
   </properties>
 
@@ -33,6 +35,19 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
+    </dependency>
+
+    <!-- Spring cloud -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-config</artifactId>
+    </dependency>
+
+    <!-- Spring retry -->
+    <dependency>
+      <groupId>org.springframework.retry</groupId>
+      <artifactId>spring-retry</artifactId>
+      <version>${spring-retry.version}</version>
     </dependency>
 
     <!-- Utils -->
@@ -65,6 +80,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <plugins>
