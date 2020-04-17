@@ -21,10 +21,11 @@ class BarController(private val barService: BarService) {
     @GetMapping("/{uuid}")
     fun getBar(@PathVariable("uuid") uuid: String): ResponseEntity<Bar> = ResponseEntity.of(barService.getByUuid(uuid))
 
-    @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun saveBar(@RequestBody bar: Bar): Bar = barService.save(bar)
 
     @DeleteMapping("/{uuid}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     fun deleteBarByUuid(@PathVariable("uuid") uuid: String) = barService.deleteByUuid(uuid)
 }
