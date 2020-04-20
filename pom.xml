@@ -233,25 +233,9 @@
                 <extensions>true</extensions>
                 <configuration>
                     <!-- Base class mappings etc. -->
-                    <baseClassForTests>com.mathieuaime.hhf.core.bar.BarRestBase</baseClassForTests>
-
+                    <baseClassForTests>com.mathieuaime.hhf.core.bar.BarTestBase</baseClassForTests>
                     <!-- Use JUnit 5 -->
                     <testFramework>JUNIT5</testFramework>
-
-                    <!-- We want to pick contracts from a Git repository -->
-                    <contractsRepositoryUrl>git://git@github.com:HappyHourFinder/stubs.git</contractsRepositoryUrl>
-
-                    <!-- We reuse the contract dependency section to set up the path
-                    to the folder that contains the contract definitions. In our case the
-                    path will be /groupId/artifactId/version/contracts -->
-                    <contractDependency>
-                        <groupId>${project.groupId}</groupId>
-                        <artifactId>${project.artifactId}</artifactId>
-                        <version>${project.version}</version>
-                    </contractDependency>
-
-                    <!-- The contracts mode can't be classpath -->
-                    <contractsMode>REMOTE</contractsMode>
                 </configuration>
                 <executions>
                     <execution>
