@@ -4,7 +4,7 @@ Contract.make {
     description "bar not found"
     request {
         method GET()
-        url("/0")
+        url("/bars/0")
     }
     response {
         status 404

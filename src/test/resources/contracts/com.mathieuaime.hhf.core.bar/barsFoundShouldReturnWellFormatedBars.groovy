@@ -4,7 +4,7 @@ Contract.make {
     description "bar found"
     request {
         method GET()
-        url("/")
+        url("/bars")
     }
     response {
         status 200

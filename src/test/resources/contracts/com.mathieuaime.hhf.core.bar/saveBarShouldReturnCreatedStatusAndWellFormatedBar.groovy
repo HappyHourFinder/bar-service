@@ -4,7 +4,7 @@ Contract.make {
     description "delete bar"
     request {
         method POST()
-        url("/")
+        url("/bars")
         body(
                 name: 'Bar',
                 latitude: '1.0',

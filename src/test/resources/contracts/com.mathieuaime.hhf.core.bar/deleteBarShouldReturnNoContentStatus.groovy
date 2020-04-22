@@ -4,7 +4,7 @@ Contract.make {
     description "delete bar"
     request {
         method DELETE()
-        url("/1")
+        url("/bars/1")
     }
     response {
         status 204
