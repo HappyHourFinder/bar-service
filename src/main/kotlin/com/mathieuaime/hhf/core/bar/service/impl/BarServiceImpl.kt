@@ -1,13 +1,12 @@
 package com.mathieuaime.hhf.core.bar.service.impl
 
 import com.mathieuaime.hhf.core.bar.api.Bar
-import com.mathieuaime.hhf.core.bar.api.toEntity
 import com.mathieuaime.hhf.core.bar.model.BarEntity
-import com.mathieuaime.hhf.core.bar.model.toApi
 import com.mathieuaime.hhf.core.bar.repository.BarRepository
 import com.mathieuaime.hhf.core.bar.service.BarService
 import org.springframework.stereotype.Service
-import java.util.Optional
+import java.util.*
+import java.util.UUID.randomUUID
 
 @Service
 internal class BarServiceImpl(private val repository: BarRepository) : BarService {
@@ -19,3 +18,7 @@ internal class BarServiceImpl(private val repository: BarRepository) : BarServic
 
     override fun deleteByUuid(uuid: String) = repository.deleteById(uuid)
 }
+
+private fun BarEntity.toApi() = Bar(uuid, name, latitude, longitude)
+
+private fun Bar.toEntity() = BarEntity(uuid ?: randomUUID().toString(), name, latitude, longitude)

@@ -1,6 +1,5 @@
 package com.mathieuaime.hhf.core.bar.model
 
-import com.mathieuaime.hhf.core.bar.api.Bar
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -18,5 +17,3 @@ data class BarEntity(
         @Column(nullable = false)
         val longitude: Double
 )
-
-fun BarEntity.toApi() = Bar(uuid, name, latitude, longitude)
