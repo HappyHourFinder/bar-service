@@ -1,7 +1,7 @@
 import org.springframework.cloud.contract.spec.Contract
 
 Contract.make {
-    description "delete bar"
+    description "save bar"
     request {
         method POST()
         url("/bars")
